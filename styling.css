@@ -1,0 +1,192 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+tahanan-topbar {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: var(--black);
+    width: 100vw;
+    height: 60px;
+}
+.topbar-inner > img {
+    padding: 5px;
+}
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    --white: #f4efe6;
+    --black: #2f2f2f;
+    --brown: #8b4513;
+    --blue: #3e91a3;
+    --green: #6bae75;
+    --coral: #ff7860;
+    --yellow: #f6c844;
+    background-color: var(--white);
+}
+html {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    color: var(--black);
+    font-family: "Objektiv";
+}
+.topbar-inner {
+    display: flex;
+    height: 50px;
+    position: relative;
+    top: 0px;
+    background: var(--white);
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+}
+@font-face {
+    font-family: "Batangas";
+    src: url(Batangas\ Bold\ 700.otf);
+}
+@font-face {
+    font-family: "Objektiv";
+    src: url(Objektiv-regular.otf);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Batangas";
+    font-weight: 400;
+    color: var(--black);
+    letter-spacing: 0em;
+}
+h1 {
+    font-family: "Batangas";
+    font-weight: 700;
+    color: var(--black);
+    align-self: center;
+    max-width: calc(50vw - 100px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.contentScrollHalf {
+}
+.contentScrollInner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    width: 100vw;
+    height: fit-content;
+    background: var(--black);
+    align-content: stretch;
+}
+
+.contentScrollInner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Two equal columns with a separator in the middle */
+    width: 100vw;
+    height: fit-content;
+    background: var(--black);
+    align-content: stretch;
+}
+
+.contentScrollInner > div {
+    background: var(--white);
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the div takes the full height of the grid cell */
+}
+
+.contentScrollInner > .separator {
+    background: var(--black);
+    width: 10px; /* Adjust the width of the separator as needed */
+    height: 100%;
+}
+.contentScrollHalf > child {
+    padding-right: 10px;
+}
+tahanan-thumbnail {
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    max-height: 100%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    max-width: 100%;
+    height: 100%;
+}
+.thumbnail-container > * {
+    position: absolute; /* Stack children on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.thumbnail-container {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.thumbnail-image {
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.thumbnail-text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: min-content;
+    width: fit-content;
+}
+.thumbnail-text-container::before {
+    align-self: center;
+}
+.thumbnail-overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure the overlay does not interfere with interactions */
+}
+.thumbnail-text-container > * {
+    margin: 0;
+}
+.thumbnail-link-container {
+    display: flex;
+    gap: 5px;
+    height:;
+}
+
+.primaryThumbnail {
+    color: white;
+    background: var(--color);
+    padding: 3px;
+    mix-blend-mode: multiply;
+}
+
+.secondaryThumbnail {
+    box-sizing: border-box;
+    border: 2px solid var(--color);
+    color: var(--color);
+    padding: 1px;
+}
+.thumbnail-link {
+    color: var(--color);
+    text-decoration: none;
+    height: fit-content;
+}
