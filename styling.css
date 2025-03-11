@@ -2,7 +2,9 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    color: var(--black);
 }
+
 tahanan-topbar {
     display: block;
     position: relative;
@@ -12,9 +14,11 @@ tahanan-topbar {
     width: 100vw;
     height: 60px;
 }
+
 .topbar-inner > img {
     padding: 5px;
 }
+
 body {
     margin: 0px;
     width: 100vw;
@@ -23,11 +27,12 @@ body {
     --black: #2f2f2f;
     --brown: #8b4513;
     --blue: #3e91a3;
-    --green: #6bae75;
+    --green: #6bae75ff;
     --coral: #ff7860;
     --yellow: #f6c844;
     background-color: var(--white);
 }
+
 html {
     position: absolute;
     width: 100vw;
@@ -35,6 +40,7 @@ html {
     color: var(--black);
     font-family: "Objektiv";
 }
+
 .topbar-inner {
     display: flex;
     height: 50px;
@@ -45,14 +51,17 @@ html {
     flex-direction: row;
     align-content: center;
 }
+
 @font-face {
     font-family: "Batangas";
     src: url(Batangas\ Bold\ 700.otf);
 }
+
 @font-face {
     font-family: "Objektiv";
     src: url(Objektiv-regular.otf);
 }
+
 h1,
 h2,
 h3,
@@ -64,6 +73,7 @@ h6 {
     color: var(--black);
     letter-spacing: 0em;
 }
+
 h1 {
     font-family: "Batangas";
     font-weight: 700;
@@ -74,8 +84,10 @@ h1 {
     white-space: nowrap;
     overflow: hidden;
 }
+
 .contentScrollHalf {
 }
+
 .contentScrollInner {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two equal columns */
@@ -106,9 +118,11 @@ h1 {
     width: 10px; /* Adjust the width of the separator as needed */
     height: 100%;
 }
+
 .contentScrollHalf > child {
     padding-right: 10px;
 }
+
 tahanan-thumbnail {
     box-sizing: border-box;
     display: block;
@@ -119,6 +133,7 @@ tahanan-thumbnail {
     max-width: 100%;
     height: 100%;
 }
+
 .thumbnail-container > * {
     position: absolute; /* Stack children on top of each other */
     top: 0;
@@ -126,6 +141,7 @@ tahanan-thumbnail {
     width: 100%;
     height: 100%;
 }
+
 .thumbnail-container {
     overflow: hidden;
     box-sizing: border-box;
@@ -133,6 +149,7 @@ tahanan-thumbnail {
     height: 100%;
     position: relative;
 }
+
 .thumbnail-image {
     object-fit: cover;
     overflow: hidden;
@@ -140,7 +157,6 @@ tahanan-thumbnail {
 
 .thumbnail-text-container {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
     padding: 10px;
@@ -151,9 +167,11 @@ tahanan-thumbnail {
     height: min-content;
     width: fit-content;
 }
+
 .thumbnail-text-container::before {
     align-self: center;
 }
+
 .thumbnail-overlay {
     display: flex;
     position: absolute;
@@ -162,21 +180,36 @@ tahanan-thumbnail {
     width: 100%;
     height: 100%;
     pointer-events: none; /* Ensure the overlay does not interfere with interactions */
+    flex-direction: column;
 }
+
 .thumbnail-text-container > * {
     margin: 0;
 }
+
 .thumbnail-link-container {
     display: flex;
     gap: 5px;
-    height:;
+}
+.primaryThumbnail {
+    position: relative;
+    display: inline-block;
+    font-size: 2rem; /* This should match the font-size used in the SVG */
+    padding: 3px; /* Padding around the text */
+    color: transparent; /* Make text invisible */
+    background: var(--color); /* Background color */
+    -webkit-mask-image: text; /* Safari/Chrome mask (clip-path text) */
+    mask-image: text; /* Standard mask for other browsers */
+    mask-size: cover; /* Ensure the background covers the whole area */
 }
 
-.primaryThumbnail {
-    color: white;
-    background: var(--color);
+.primaryThumbnail svg {
+    width: auto;
+    height: 3em;
+    display: inline-block;
     padding: 3px;
-    mix-blend-mode: multiply;
+    background-color: transparent;
+    width: 100vw; /* Make it full width */
 }
 
 .secondaryThumbnail {
@@ -185,8 +218,22 @@ tahanan-thumbnail {
     color: var(--color);
     padding: 1px;
 }
+
 .thumbnail-link {
     color: var(--color);
     text-decoration: none;
     height: fit-content;
+}
+
+.content {
+    margin: 0px;
+    gap: 10px;
+}
+
+.ribbon {
+    width: 100%;
+    height: 50%;
+}
+.thumbnail-svg {
+    top: 50%;
 }
