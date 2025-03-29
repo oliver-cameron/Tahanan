@@ -68,9 +68,10 @@ class Thumbnail extends HTMLElement {
     overlay.style.height = "100%";
 
     const verticalHug = this.getAttributeOrDefault("verticalhug");
+    overlay.classList.add(`vertical-${verticalHug}`);
     switch (verticalHug) {
       case "top":
-        overlay.style.alignContent = "flex-start";
+        overlay.style.justifyContent = "flex-start";
         break;
       case "bottom":
         overlay.style.justifyContent = "flex-end";
@@ -87,6 +88,8 @@ class Thumbnail extends HTMLElement {
     textContainer.style.flexDirection = "column";
 
     const horizontalHug = this.getAttributeOrDefault("horizontalhug");
+textContainer.style.left = "50%";
+textContainer.style.left = "50%";
     textContainer.style.left = "50%";
     switch (horizontalHug) {
       case "left":
