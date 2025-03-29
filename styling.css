@@ -85,6 +85,17 @@ h1 {
     overflow: hidden;
 }
 
+h3 {
+    font-family: "Batangas", sans-serif;
+    font-size: 24px;
+    margin: 0;
+}
+
+p {
+    font-size: 16px;
+    margin: 0;
+}
+
 .contentScrollHalf {
 }
 
@@ -134,6 +145,12 @@ tahanan-thumbnail {
     height: 100%;
 }
 
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
 .thumbnail-container > * {
     position: absolute; /* Stack children on top of each other */
     top: 0;
@@ -142,17 +159,57 @@ tahanan-thumbnail {
     height: 100%;
 }
 
-.thumbnail-container {
-    overflow: hidden;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
 .thumbnail-image {
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
     overflow: hidden;
+}
+
+.thumbnail-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.thumbnail-overlay.vertical-top {
+    align-items: flex-start;
+}
+
+.thumbnail-overlay.vertical-center {
+    align-items: center;
+}
+
+.thumbnail-overlay.vertical-bottom {
+    align-items: flex-end;
+}
+
+.thumbnail-text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.thumbnail-text-container.horizontal-left {
+    text-align: left;
+}
+
+.thumbnail-text-container.horizontal-center {
+    text-align: center;
+}
+
+.thumbnail-text-container.horizontal-right {
+    text-align: right;
 }
 
 .thumbnail-text-container {
@@ -172,25 +229,24 @@ tahanan-thumbnail {
     align-self: center;
 }
 
-.thumbnail-overlay {
+.thumbnail-link-container {
     display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Ensure the overlay does not interfere with interactions */
-    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
 }
 
-.thumbnail-text-container > * {
-    margin: 0;
+.thumbnail-link {
+    text-decoration: none;
+    color: inherit;
+    color: var(--color);
+    height: fit-content;
 }
 
 .thumbnail-link-container {
     display: flex;
     gap: 5px;
 }
+
 .primaryThumbnail {
     position: relative;
     display: inline-block;
@@ -201,13 +257,15 @@ tahanan-thumbnail {
     -webkit-mask-image: text; /* Safari/Chrome mask (clip-path text) */
     mask-image: text; /* Standard mask for other browsers */
     mask-size: cover; /* Ensure the background covers the whole area */
+    height: 100%;
 }
 
 .primaryThumbnail svg {
     width: auto;
     height: 3em;
     display: inline-block;
-    padding: 3px;
+    /* padding: 3px; */
+    margin: auto;
     background-color: transparent;
     width: 100vw; /* Make it full width */
 }
@@ -217,12 +275,6 @@ tahanan-thumbnail {
     border: 2px solid var(--color);
     color: var(--color);
     padding: 1px;
-}
-
-.thumbnail-link {
-    color: var(--color);
-    text-decoration: none;
-    height: fit-content;
 }
 
 .content {
@@ -236,4 +288,70 @@ tahanan-thumbnail {
 }
 .thumbnail-svg {
     top: 50%;
+}
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+.button-19:active {
+  border-width: 4px 0 0;
+  background: none;
 }

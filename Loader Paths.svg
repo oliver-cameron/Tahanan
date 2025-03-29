@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 406">
+  <style>
+    /* Common path styles */
+    .path {
+      fill: none;
+      stroke: #010101;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 10px;
+      stroke-dasharray: var(--path-length);
+      stroke-dashoffset: var(--path-length);
+      animation-timing-function: linear;
+    }
+
+    /* Animation for the first two paths (stroke grows from 0 length) */
+    .path-grow {
+      animation: grow 1s linear infinite;
+    }
+
+    /* Animation for the last two paths (stroke shrinks from full length) */
+    .path-shrink {
+      stroke: #ff000ff;
+      animation: shrink 1s linear infinite;
+    }
+
+    /* Keyframes for growing stroke */
+    @keyframes grow {
+      0% {
+        stroke-dashoffset: var(--path-length); /* Initially hide the stroke */
+      }
+      50% {
+        stroke-dashoffset: 0; /* Fully reveal the stroke */
+      }
+      50.001%{
+        stroke-dashoffset: var(--path-length); /* Hide the stroke */
+      }
+      100% {
+        stroke-dashoffset: var(--path-length); /* Hide the stroke */
+      }
+    }
+
+    /* Keyframes for shrinking stroke */
+    @keyframes shrink {
+      /* initially hide the stroke until 50%*/
+      0% {
+        stroke-dashoffset: var(--path-length); /* Initially hide the stroke */
+      }
+      50% {
+        stroke-dashoffset: var(--path-length); /* Fully reveal the stroke */
+      }
+      50.001% {
+        stroke-dashoffset: 0; /* Initially show the full stroke */
+      }
+      100% {
+        stroke-dashoffset: var(--path-length); /* Hide the stroke */
+      }
+    }
+  </style>
+
+  <g>
+    <path d="M405.38,199.89L206.96,1.46c-.94-.94-2.21-1.46-3.54-1.46s-2.6.53-3.54,1.46L1.46,199.89c-1.95,1.95-1.95,5.12,0,7.07l198.42,198.42c.94.94,2.21,1.46,3.54,1.46s2.6-.53,3.54-1.46l81.52-81.52v-14.14l-85.05,85.05L12.07,203.43,203.42,12.07l191.35,191.35-56.31,56.31h6.71v7.44l60.22-60.22c1.95-1.95,1.95-5.12,0-7.07Z" style="fill: #8c592c;"/>
+    <path d="M373.5,406.85H33.35c-2.76,0-5-2.24-5-5v-226.77c0-2.76,2.24-5,5-5h340.16c2.76,0,5,2.24,5,5v226.77c0,2.76-2.24,5-5,5ZM38.35,396.85h330.16v-216.77H38.35v216.77Z" style="fill: #f6c945;"/>
+    <path d="M118.4,180.08h-56.69c-2.76,0-5-2.24-5-5V61.69c0-2.76,2.24-5,5-5h56.69c2.76,0,5,2.24,5,5v113.39c0,2.76-2.24,5-5,5ZM66.71,170.08h46.69v-103.39h-46.69v103.39Z" style="fill: #f37862;"/>
+    <path d="M345.17,378.12h-56.69c-2.76,0-5-2.24-5-5v-113.39c0-2.76,2.24-5,5-5h56.69c2.76,0,5,2.24,5,5v113.39c0,2.76-2.24,5-5,5ZM293.48,368.12h46.69v-103.39h-46.69v103.39Z" style="fill: #6aad75;"/>
+  </g>
+  <!-- Animated paths -->
+ <polyline id="s4" class="path path-shrink" style="--path-length:48.7604cm " points="345.17 259.74 288.48 259.74 288.48 373.12 345.17 373.12 345.17 259.74 401.85 203.43 203.42 5 5 203.43 203.43 401.85 288.48 316.8" />
+    <polyline id= "s3" class="path path-shrink" style="--path-length:50cm; " points="61.71 175.08 373.5 175.08 373.5 401.85 33.35 401.85 33.35 175.08 61.71 175.08 61.71 61.69 118.4 61.69 118.4 175.08" />
+
+    <!-- Last two paths: Stroke shrinks from full length -->
+    <polyline id="s2" class="path path-grow" style="--path-length:54.9706cm;" points="288.48 316.43 288.48 259.74 345.17 259.74 345.17 373.12 288.48 373.12 288.48 316.43 203.43 401.85 33.35 401.85 33.35 231.77 203.43 401.85 373.5 401.85 373.5 175.08 401.85 203.43 345.17 259.74" />
+     <polyline id="s1" class="path path-grow" style="--path-length: 43.799cm;" points="118.4 175.08 33.35 175.08 33.35 231.77 5 203.43 118.4 90.03 118.4 175.08 373.5 175.08 203.42 5 118.4 90.03 118.4 61.69 61.71 61.69 61.71 175.08" />
+</svg>
