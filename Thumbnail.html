@@ -3,24 +3,28 @@
     <head>
         <meta charset="UTF-8" />
         <title>Thumbnail</title>
-        <link rel="stylesheet" href="styling.css" />
-        <script src="template.js"></script>
+        <link rel="stylesheet" href="thumbnail.css" />
+        <link rel="stylesheet" href="newStyling.css" />
     </head>
     <body>
-        <div style="padding: 5px; width: 100vw; height: 100vh">
-            <tahanan-thumbnail
-                imageSrc="https://images.unsplash.com/photo-1527027288501-ae71c0e674c3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                header="Thumbnail"
-                subHeader="This is a thumbnail"
-                primaryLink="https://www.google.com"
-                primaryThumbnail="primary action"
-                secondaryLink="https://www.bing.com"
-                secondaryThumbnail="secondary action"
-                thumbnailColor="var(--green)"
-                horizontalHug="center"
-                verticalHug="center"
-                titleSize="1.5em"
-            ></tahanan-thumbnail>
+        <div class="thumbnail" style="width: 100vw; height: 30vh; --place-content: end end">
+            <img src="tinyhome.jpeg">
+            <div class="thumbnailTextContainer">
+                <div class="thumbnailInnerCont banner">
+                    <p>NEW</p>
+                </div>
+                <div class="thumbnailInnerCont title">
+                    <h3 style="">Tahanan</h3>
+                </div>
+                <div class="thumbnailInnerCont body">
+                    <p></p>Tiny homes, big adventures.</p>
+                </div>
+                <div class="thumbnailInnerCont buttons">
+                    <button class="thumbnailButton primary">Shop Now</button>
+                    <button class="thumbnailButton secondary">Learn More</button>
+                </div>
+                <h3 style="">2</h3>
+            </div>
         </div>
     </body>
 </html>

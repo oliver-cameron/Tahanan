@@ -1,36 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <title>Tahanan/Home</title>
         <script src="template.js"></script>
-        <script src = "home.js"></script>
+        <script src="home.js"></script>
+        <link rel="stylesheet" href="newStyling.css" />
+        <link rel="stylesheet" href="Thumbnail.css" />
     </head>
     <body>
         <tahanan-topbar title="Home"></tahanan-topbar>
-    <div class="ribbon">
-        <tahanan-thumbnail
-            imageSrc="https://images.unsplash.com/photo-1527027288501-ae71c0e674c3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            header="Tahanan"
-            subHeader="Small Homes, Big Adventures"
-            thumbnailColor="var(--brown)"
-            horizontalHug="center"
-            primaryLink="https://www.google.com"
-            primaryThumbnail="Open The Customiser"
-            secondaryLink="https://www.bing.com"
-            secondaryThumbnail="Contact Us"
-            verticalHug="center"
-            titleSize = "10vw"
-            bodySize = "2vw"
-        ></tahanan-thumbnail>
-    </div>
-    <big-header text="Holiday Homes for Everyone">
-            
-    </big-header>
-    <tahanan-grid rows="1" columns="3">
-        <tahanan-thumbnail imageSrc="Bamboo.png"></tahanan-thumbnail>
-        <tahanan-thumbnail imageSrc="Bamboo.png"></tahanan-thumbnail>
-        <tahanan-thumbnail imageSrc="Bamboo.png"></tahanan-thumbnail>
-    </tahanan-grid>
+        <div class="ribbon">
+            <div
+                class="thumbnail"
+                style="
+                    width: 100vw;
+                    height: 50vh;
+                    --place-content: center center;
+                "
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1527027288501-ae71c0e674c3?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                />
+                <div class="thumbnailTextContainer">
+                    <div class="thumbnailInnerCont title">
+                        <h3>Tahanan</h3>
+                    </div>
+                    <div class="thumbnailInnerCont body">
+                        <p>Tiny homes, big adventures.</p>
+                    </div>
+                    <div class="thumbnailInnerCont buttons">
+                        <button class="tmButton primary">
+                            Open The Customiser
+                        </button>
+                        <button class="tmButton secondary">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Let go of same old</h2>
+            <p></p>
+        </div>
     </body>
 </html>

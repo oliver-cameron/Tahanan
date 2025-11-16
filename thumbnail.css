@@ -1,0 +1,72 @@
+/*
+Layout of a thumbnail is as follows
+<div class="thumbnail" style="
+--place-content: start-end ... (other alignemnt patterns of CSS Grid);
+--tm-elem-align: left|center|right;
+--tx-size: ...;
+--h-size: ...;
+--button-color: ...;
+(Other attributes are specific to singular elements and will go there)
+">
+    <img ...>
+    <div class="thumbnailTextContainer">
+        <div class="thumbnailInnerCont banner">
+            <p> ... </p>
+        </div>
+        <div class="thumbnailInnerCont title">
+            <h3> ... </h3>
+        </div>
+        <div class="thumbnailInnerCont body">
+            <p> ... </p>
+        </div>
+        <div class="thumbnailInnerCont buttons">
+            <button class="tmButton primary> </button>
+            <button class="tmButton secondary> </button>
+        </div>
+    </div>
+</div>
+*/
+.thumbnail {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    --tx-size: 1em;
+    --h-size: 3em;
+    --tm-elem-align: left;
+    & > .thumbnailTextContainer {
+        position: absolute;
+        /*z-index: 2;*/
+        /*width: fit-content;
+        height: fit-content;*/
+        width: 60%;
+        padding: var(--tx-size);
+        display: grid;
+        grid-template-rows:
+            var(--tx-size) var(--h-size) calc(var(--tx-size) * 3)
+            var(--h-size);
+        margin-left: var(--tx-size);
+        margin-right: var(--tx-size);
+        gap: var(--tx-size);
+        & > .thumbnailInnerCont {
+            text-align: var(--tm-elem-align);
+        }
+        & > .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: var(--tm-elem-align);
+            gap: calc(var(--tx-size) / 2);
+            & > .tmButton {
+                color: var(--button-color, black);
+                /*padding: 5px;*/
+                border: 3px solid var(--button-color, black);
+                background-color: transparent;
+            }
+        }
+        place-self: var(--place-content);
+    }
+    & > img {
+        height: 100%;
+        object-fit: fill;
+        /*z-index: 1;*/
+    }
+}

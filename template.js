@@ -221,6 +221,7 @@ class Grid extends HTMLElement {
       width: "100%",
       height: "100%",
     };
+    this.contents = this.innerHTML;
   }
   getAttributeOrDefault(attr) {
     return this.getAttribute(attr) || this.defaultValues[attr];
@@ -231,7 +232,6 @@ class Grid extends HTMLElement {
     }
   }
   connectedCallback() {
-    this.contents = this.innerHTML;
     this.render();
   }
   // scanForThumbnails(element) {
