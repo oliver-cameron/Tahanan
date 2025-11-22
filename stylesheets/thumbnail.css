@@ -5,6 +5,7 @@ Layout of a thumbnail is as follows
 --tm-elem-align: left|center|right;
 --tx-size: ...;
 --h-size: ...;
+--tx-color: ...;
 --button-color: ...;
 (Other attributes are specific to singular elements and will go there)
 ">
@@ -30,9 +31,11 @@ Layout of a thumbnail is as follows
     position: relative;
     display: grid;
     overflow: hidden;
+    align-content: center;
     --tx-size: 1em;
     --h-size: 3em;
     --tm-elem-align: left;
+    color: var(--tx-color, var(--black, black));
     & > .thumbnailTextContainer {
         position: absolute;
         /*z-index: 2;*/
@@ -48,7 +51,12 @@ Layout of a thumbnail is as follows
         margin-right: var(--tx-size);
         gap: var(--tx-size);
         & > .thumbnailInnerCont {
+            inherits: true;
             text-align: var(--tm-elem-align);
+            color: var(--tx-color, var(--black, black));
+            & > p, & > h3 {
+                color: var(--tx-color, var(--black, black));
+            }
         }
         & > .buttons {
             display: flex;
@@ -57,16 +65,20 @@ Layout of a thumbnail is as follows
             gap: calc(var(--tx-size) / 2);
             & > .tmButton {
                 color: var(--button-color, black);
-                /*padding: 5px;*/
+                margin: 5px;
                 border: 3px solid var(--button-color, black);
+                line-height: calc(var(--tx-size) / 2);
                 background-color: transparent;
+                font-size: var(--tx-size);
             }
         }
         place-self: var(--place-content);
     }
     & > img {
-        height: 100%;
-        object-fit: fill;
+        height: auto;
+        width: 100%;
+        align-self: center;
+        /* object-fit: fit; */
         /*z-index: 1;*/
     }
 }

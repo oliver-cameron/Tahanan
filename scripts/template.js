@@ -1,10 +1,11 @@
-var link = document.createElement("link");
-link.rel = "stylesheet";
-link.href = "styling.css";
-var script1 = document.createElement("script");
-script1.src = "thumbnail.js";
-document.head.appendChild(script1);
-document.head.appendChild(link);
+var newStyling = document.createElement("link");
+newStyling.rel = "stylesheet";
+newStyling.href = "newStyling.css";
+document.head.appendChild(newStyling);
+var thumbnail = document.createElement("link");
+thumbnail.rel = "stylesheet";
+thumbnail.href = "thumbnail.css";
+document.head.appendChild(thumbnail);
 
 // class TahananElement extends HTMLElement {
 //   getAttributeOrDefault(attr) {

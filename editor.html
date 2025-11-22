@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="scripts/template.js"></script>
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://cdn.jsdelivr.net/npm/three@0.181.1/build/three.module.js",
+                    "obj": "https://cdn.jsdelivr.net/npm/three@0.181.1/examples/jsm/loaders/OBJLoader.js",
+                    "mtl": "https://cdn.jsdelivr.net/npm/three@0.181.1/examples/jsm/loaders/MTLLoader.js",
+                    "orbit": "https://cdn.jsdelivr.net/npm/three@0.181.1/examples/jsm/controls/OrbitControls.js",
+                    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.181.1/examples/jsm/"
+                }
+            }
+        </script>
+        <script src="scripts/editor.js" type="module"></script>
+        <link rel="stylesheet" href="stylesheets/editor.css">
+    </head>
+    <body>
+        <tahanan-topbar title="Booking"></tahanan-topbar>
+        <h3>Design your home, then book your stay</h3>
+        <div id="editorContainer">
+            <div id="viewerContainer">
+
+            </div>
+            <div id="controlsContainer">
+                <div class="controlGroup">
+                    <div style="border: 2px solid var(--black); border-radius: 5px; width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="addElementButton">
+                        <p style="">+</p>
+                        <p>Add Elements</p>
+                    </div>
+                </div>
+                <div class="controlGroup">
+                    <label for="roofStyle">Roof Style:</label>
+                    <select id="roofStyle" name="roofStyle">
+                        <option value="flat">Flat</option>
+                        <option value="gabled">Gabled</option>
+                        <option value="hipped">Hipped</option>
+                    </select>
+                </div>
+                <div class="controlGroup">
+                    <label for="furnitureStyle">Furniture Style:</label>
+                    <select id="furnitureStyle" name="furnitureStyle">
+                        <option value="modern">Modern</option>
+                        <option value="rustic">Rustic</option>
+                        <option value="minimalist">Minimalist</option>
+                    </select>
+                </div>
+                <button id="bookNowButton">Book Now</button>
+            </div>
+    </body>
+</html>
