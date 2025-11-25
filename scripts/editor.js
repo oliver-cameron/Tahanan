@@ -35,6 +35,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.domElement.style.width = "100%";
 renderer.domElement.style.height = "100%";
 renderer.domElement.id = "threeCanvas";
+// renderer.domElement.style.pointerEvents = "none";
+renderer.domElement.addEventListener("keydown", (event) => {
+  handleThreeJsInput(event.key);
+  if (["ArrowLeft"].includes(event.key.toLowerCase())) {
+    event.preventDefault();
+  }
+});
 document.getElementById("viewerContainer").appendChild(renderer.domElement);
 // const geometry = new THREE.BoxGeometry(1, 1, 1);
 // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -44,8 +51,19 @@ camera.position.y = 5;
 camera.position.z = 5;
 camera.lookAt(0, 0, 0);
 scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-
 const controls = new OrbitControls(camera, renderer.domElement);
+renderer.domElement.onwheel = function (e) {};
+controls.enableZoom = false; // Disable scroll-wheel zoom
+controls.enablePan = false; // Optionally disable right-click pan/drag
+controls.update();
+controls.keys = {
+  LEFT: "ArrowLeft", //left arrow
+  UP: "ArrowUp", // up arrow
+  RIGHT: "ArrowRight", // right arrow
+  BOTTOM: "ArrowDown", // down arrow
+};
+controls.enableKeys = true;
+controls.enableZoom = false;
 controls.target.set(0, 0, 0);
 controls.update();
 function animate() {

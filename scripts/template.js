@@ -1,12 +1,17 @@
 var newStyling = document.createElement("link");
 newStyling.rel = "stylesheet";
-newStyling.href = "newStyling.css";
+newStyling.href = "stylesheets/newStyling.css";
 document.head.appendChild(newStyling);
 var thumbnail = document.createElement("link");
 thumbnail.rel = "stylesheet";
-thumbnail.href = "thumbnail.css";
+thumbnail.href = "stylesheets/thumbnail.css";
 document.head.appendChild(thumbnail);
 
+let dir = [
+  { title: "Home", src: "./" },
+  { title: "Book", src: "./editor.html" },
+  { title: "Menu", src: "./menu.html" },
+];
 // class TahananElement extends HTMLElement {
 //   getAttributeOrDefault(attr) {
 //     return this.getAttribute(attr) || this.defaultValues[attr];
@@ -50,21 +55,41 @@ class Topbar extends HTMLElement {
     // Create the inner container
     const container = document.createElement("div");
     container.className = "topbar-inner";
-
+    container.style.justifyContent = "space-between";
     // Create the logo image
-    const img = document.createElement("img");
-    img.src = "Tahanan-logo.svg";
-    container.appendChild(img);
 
     // Create the title
+    const titleDiv = document.createElement("div");
+    const img = document.createElement("img");
+    img.src = "Tahanan-logo.svg";
+    titleDiv.appendChild(img);
+    titleDiv.style.display = "flex";
+    titleDiv.style.flexDirection = "row";
+    titleDiv.style.gap = "10px";
+    const ttitle = document.createElement("h1");
+    ttitle.innerHTML = "Tahanan";
+    titleDiv.appendChild(ttitle);
+    const stitle = document.createElement("h1");
+    stitle.innerHTML =
+      "<span style='color:var(--blue); font-family: objektiv;font-weight: 300;'>/</span>";
+    titleDiv.appendChild(stitle);
     const title = document.createElement("h1");
-    title.innerHTML = ("Tahanan / " + this.getAttribute("title"))
-      .split("/")
-      .join(
-        "<span style='color:var(--blue); font-family: objektiv;font-weight: 300;'>/</span>",
-      );
-    container.appendChild(title);
+    title.innerHTML = this.getAttribute("title");
+    titleDiv.appendChild(title);
+    container.appendChild(titleDiv);
 
+    // Create the navigation links
+    let linksContainer = document.createElement("div");
+    linksContainer.style.gap = "20px";
+    linksContainer.style.display = "flex";
+    linksContainer.style.flexDirection = "row";
+    linksContainer.style.justifySelf = "end";
+    dir.forEach((item) => {
+      const link = document.createElement("h1");
+      link.innerHTML = `<a href=${item.src} style="text-decoration: none">${item.title}</a>`;
+      linksContainer.appendChild(link);
+    });
+    container.appendChild(linksContainer);
     // Append the container to the topbar
     this.appendChild(container);
   }
